@@ -1,6 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:super_app/src/screens/sub_app_2_screen.dart';
+import 'package:super_app/src/screens/sub_app_3.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -38,10 +40,16 @@ class HomeScreen extends StatelessWidget {
               child: const Text('SubApp 2'),
             ),
           ),
-          Container(
-            alignment: Alignment.center,
-            decoration: BoxDecoration(color: Colors.red.shade200),
-            child: const Text('SubApp 3'),
+          GestureDetector(
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const SubApp3()));
+            },
+            child: Container(
+              alignment: Alignment.center,
+              decoration: BoxDecoration(color: Colors.red.shade200),
+              child: const Text('SubApp 3'),
+            ),
           ),
         ],
       )),
